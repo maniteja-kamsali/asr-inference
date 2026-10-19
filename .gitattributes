@@ -1,0 +1,2 @@
+reader/reader.pt filter=lfs diff=lfs merge=lfs -text
+reader/word_table.npy filter=lfs diff=lfs merge=lfs -text
