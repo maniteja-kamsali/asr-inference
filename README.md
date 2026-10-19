@@ -29,6 +29,8 @@ The Reader command prints its transcript followed by model-load and transcriptio
 - **Reader audio encoder:** `google/embeddinggemma-2`. It is downloaded from Hugging Face and cached outside this folder on first use.
 - **Whisper:** OpenAI Whisper `small`, installed as a Python package. Its checkpoint is downloaded on first use to the user's Whisper cache (normally `%USERPROFILE%\.cache\whisper`); it is not included in this project and is ignored by `.gitignore` if copied into the project.
 
+The two included Reader weight files, `reader/reader.pt` and `reader/word_table.npy`, are stored with Git LFS because they exceed GitHub's regular file-size limit. Install Git LFS before cloning this repository so Git can fetch their contents.
+
 ## Recordings and results
 
 Times below are the values printed by the user's latest runs on an NVIDIA GeForce RTX 5060 Ti with CUDA. Model-load time is per command; transcription time is per clip.
@@ -58,6 +60,8 @@ WER was scored against the two test passages provided in the chat. Scoring ignor
 
 ```text
 asr-inference/
+├── .gitattributes
+├── .gitignore
 ├── Recording.wav
 ├── Recording2.wav
 ├── README.md
